@@ -1,0 +1,31 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "us-west-2",
+      "source_ami": "ami-4e79ed36",
+      "instance_type": "t2.medium",
+      "ssh_username": "ubuntu",
+      "ami_name": "xentaurs-ic-todo-{{timestamp}}",
+      "launch_block_device_mappings": [
+        {
+          "device_name": "/dev/sda1",
+          "volume_size": 16,
+          "volume_type": "gp2",
+          "delete_on_termination": true
+        }
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt update",
+        "sudo apt dist-upgrade -y",
+        "sudo apt install -y git npm nodejs",
+        "git clone git@github.com:XENTAURS/node-todo.git"
+      ]
+    }
+  ]
+}
