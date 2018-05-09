@@ -1,12 +1,12 @@
-{
-  "builders": [
-    {
+  "builders": [{
       "type": "amazon-ebs",
       "region": "us-west-2",
       "source_ami": "ami-4e79ed36",
       "instance_type": "t2.medium",
       "ssh_username": "ubuntu",
       "ami_name": "xentaurs-ic-todo-{{timestamp}}",
+      "vpc_id": "vpc-b905dedf",
+      "subnet_id": "subnet-05e6eae871375e654",
       "launch_block_device_mappings": [
         {
           "device_name": "/dev/sda1",
@@ -15,8 +15,7 @@
           "delete_on_termination": true
         }
       ]
-    }
-  ],
+  }],
   "provisioners": [
     {
       "type": "shell",
@@ -29,3 +28,4 @@
     }
   ]
 }
+
