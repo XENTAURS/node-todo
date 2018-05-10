@@ -1,3 +1,3 @@
 module.exports = {
-   remoteUrl : 'mongodb://10.101.100.120:27017/'
+   remoteUrl : 'mongodb://10.101.100.47:27017/'
 };
