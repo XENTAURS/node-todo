@@ -8,6 +8,7 @@
       "ami_name": "xentaurs-ic-todo-{{timestamp}}",
       "vpc_id": "vpc-b905dedf",
       "subnet_id": "subnet-05e6eae871375e654",
+      "associate_public_ip_address": true,
       "launch_block_device_mappings": [
         {
           "device_name": "/dev/sda1",
@@ -24,7 +25,7 @@
         "sudo apt update",
         "sudo apt dist-upgrade -y",
         "sudo apt install -y git npm nodejs",
-        "git clone git@github.com:XENTAURS/node-todo.git"
+        "git clone https://github.com/XENTAURS/node-todo.git"
       ]
     }
   ]
