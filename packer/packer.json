@@ -27,7 +27,7 @@
         "sudo apt install -y git npm nodejs",
         "cd /opt && sudo git clone https://github.com/XENTAURS/node-todo.git",
         "cd /opt/node-todo && sudo npm install",
-        "sudo sed -i 's/exit 0/nodejs \\/opt\\/node-todo\\/server.js \\&; exit 0/' /etc/rc.local"
+        "sudo sed -i 's/exit 0/cd \\/opt\\/node-todo \\&\\& \\/usr\\/bin\\/nodejs server.js \\& exit 0/' /etc/rc.local"
       ]
     }
   ]
